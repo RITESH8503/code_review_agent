@@ -8,3 +8,6 @@ function processUser(username, password) {
 
 
 }
+
+        let secretKey = "SUPER_SECRET_AWS_KEY_12345";
+
