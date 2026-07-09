@@ -7,7 +7,6 @@
 // 1. CRITICAL SEVERITY
 // ==========================================
 
-// Category: Hardcoded Secrets & Credentials
 function initializeCloudStorage() {
     console.log("Connecting to AWS S3 Bucket...");
     
@@ -18,11 +17,11 @@ function initializeCloudStorage() {
     return connectToS3(aws_access_key_id, aws_secret_access_key);
 }
 
-// Category: Injection (SQL Injection)
+
 function getUserProfile(userId) {
     const database = require('./dbConnection');
     
-    // AI should catch the direct string concatenation vulnerable to SQLi
+
     let query = `SELECT * FROM users WHERE id = '${userId}'`;
     
     return database.execute(query);
@@ -33,7 +32,6 @@ function getUserProfile(userId) {
 // 2. HIGH SEVERITY
 // ==========================================
 
-// Category: Broken Authentication / Insecure Direct Object References (IDOR)
 function deleteInvoice(req, res) {
     const invoiceId = req.body.id;
     
@@ -44,11 +42,10 @@ function deleteInvoice(req, res) {
     });
 }
 
-// Category: Cryptographic Failures
 const crypto = require('crypto');
 
 function hashUserPassword(password) {
-    // AI should flag the use of MD5 for passwords as high risk
+
     return crypto.createHash('md5').update(password).digest('hex');
 }
 
@@ -57,15 +54,13 @@ function hashUserPassword(password) {
 // 3. MEDIUM SEVERITY
 // ==========================================
 
-// Category: Cross-Site Scripting (XSS)
 function greetUser(req, res) {
     const name = req.query.name || 'Guest';
     
-    // AI should flag rendering unsanitized user input directly into HTML
     res.send(`<h1>Hello, ${name}!</h1>`);
 }
 
-// Category: Security Misconfiguration
+
 function processPayment(req, res) {
     try {
         executePayment(req.body);
@@ -84,12 +79,10 @@ function processPayment(req, res) {
 // 4. LOW SEVERITY / CODE SMELL
 // ==========================================
 
-// Category: Dead Code & Redundant Assignments
 function calculateTotal(price, tax) {
     let finalPrice = price + (price * tax);
     return finalPrice;
     
-    // AI should flag this entire section as unreachable code
     let discount = 0.10; 
     console.log("Applying discount...");
     return finalPrice - (finalPrice * discount);
