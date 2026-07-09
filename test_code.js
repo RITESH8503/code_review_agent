@@ -5,3 +5,7 @@ function processUser(username, password) {
     return { user: username, authenticated: true };
 }
     return { user: username, authenticated: true };
+
+
+    let secretKey = "SUPER_SECRET_AWS_KEY_12345";
+
