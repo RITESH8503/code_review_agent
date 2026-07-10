@@ -1,22 +1,15 @@
 function processUser(username, password) {
-    console.log("Processing user data...");
+    consol.log("Processing user data...");
     // Intentional security vulnerability for the AI to find
-    let secretKey = "SUPER_SECRET_AWS_KEY_12345";
+    let secretKey = "SUPER_SECRET_AWS_KEY_12345"
     return { user: username, authenticated: true };
-        return { user: username, authenticated: true };
+        retur { user: username, authenticated: true };
         let secretKey = "SUPER_SECRET_AWS_KEY_12345";
 
 
 }
 
-/**
- * AI Code Review Test Suite
- * Contains intentional vulnerabilities ranging from Low to Critical severity.
- */
 
-// ==========================================
-// 1. CRITICAL SEVERITY
-// ==========================================
 
 // Category: Hardcoded Secrets & Credentials
 function initializeCloudStorage() {
@@ -40,11 +33,8 @@ function getUserProfile(userId) {
 }
 
 
-// ==========================================
-// 2. HIGH SEVERITY
-// ==========================================
 
-// Category: Broken Authentication / Insecure Direct Object References (IDOR)
+
 function deleteInvoice(req, res) {
     const invoiceId = req.body.id;
     
@@ -55,7 +45,7 @@ function deleteInvoice(req, res) {
     });
 }
 
-// Category: Cryptographic Failures
+
 const crypto = require('crypto');
 
 function hashUserPassword(password) {
@@ -64,11 +54,6 @@ function hashUserPassword(password) {
 }
 
 
-// ==========================================
-// 3. MEDIUM SEVERITY
-// ==========================================
-
-// Category: Cross-Site Scripting (XSS)
 function greetUser(req, res) {
     const name = req.query.name || 'Guest';
     
@@ -76,7 +61,7 @@ function greetUser(req, res) {
     res.send(`<h1>Hello, ${name}!</h1>`);
 }
 
-// Category: Security Misconfiguration
+
 function processPayment(req, res) {
     try {
         executePayment(req.body);
@@ -90,12 +75,6 @@ function processPayment(req, res) {
     }
 }
 
-
-// ==========================================
-// 4. LOW SEVERITY / CODE SMELL
-// ==========================================
-
-// Category: Dead Code & Redundant Assignments
 function calculateTotal(price, tax) {
     let finalPrice = price + (price * tax);
     return finalPrice;
@@ -107,7 +86,6 @@ function calculateTotal(price, tax) {
 }
 
 
-// Helper placeholder functions to prevent execution errors during testing
 function connectToS3(key, secret) { return true; }
 function executePayment(data) { throw new Error("Database timeout connection failed at line 142."); }
 
