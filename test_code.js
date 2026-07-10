@@ -1,13 +1,8 @@
-function processUser(username, password) {
-    console.log("Processing user data...");
-    // Intentional security vulnerability for the AI to find
-    let secretKey = "SUPER_SECRET_AWS_KEY_12345";
-    return { user: username, authenticated: true };
-        return { user: username, authenticated: true };
-        let secretKey = "SUPER_SECRET_AWS_KEY_12345";
-
-
+try {
+  eval("hoo bar");
+} catch (e) {
+  console.log(e instanceof SyntaxError); // true
+  console.log(e.message);
+  console.log(e.name); // "SyntaxError"
+  console.log(e.stack); // Stack of the error
 }
-
-        let secretKey = "SUPER_SECRET_AWS_KEY_12345";
-
